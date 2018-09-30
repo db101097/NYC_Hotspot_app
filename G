@@ -1,0 +1,2 @@
+854,MN,Free,Manhattan Down Alliance,8,"182-188 Front Street, New York, NY 10038,USA",40.7065,-74.0045,#DwtwnAllianceFreeWiFi
+340,QU,Limited Free,SPECTRUM,"Phil ""Scooter"" Rizzuto Park",South side of Park,40.6941,-73.8213,GuestWiFi

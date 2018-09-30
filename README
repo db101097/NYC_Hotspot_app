@@ -1,0 +1,21 @@
+Description:
+This is a simple program that uses list of wifi hotspot locations file from nyc open data. This program will parse the csv and use a sorted 
+linked list to store each hotspot. Then the hotspotlist will provide methods to find nearby hotspots , find hotspots by id and find hotspot
+in the borough specified. The program gets this information from the user through terminal. The program will ask for the user a few things 
+depending on task. For example , the user will be prompted for their latitude , longitude and acceptible distance(in miles) in order to 
+compute nearby hotspots. The results from these queries will be printed in a text file. The nearby hotspot will be printed in a file 
+called "nearby_results", the find_by_id results will print to "ID_results" and the find_by_borough will print to a file called 
+"boro_results". The menu with all the options will be continuously be prompting the user until the exit the program by typing "E".
+
+Background:
+This program was originally done as a class project for professor stewart weiss at hunter college. Professor Weiss provided the header file 
+for the Hotspot object but the implementation of functions were done by myself. It has since been modified. The project was made in 
+order to teach the class about the sorted linked list data structure. A very small portion of the code was found on stack exchange. The
+functions double deg2rad(double deg) ,double rad2deg(double rad) and float GetDistance(float lat2 , float lon2). These formulas were found
+at "https://stackoverflow.com/questions/10198985/calculating-the-distance-between-2-latitudes-and-longitudes-that-are-saved-in-a". However,
+everything else was done by myself.
+
+To run:
+To run the program simply move all the files to a common directory and then type "g++ main.cpp" in terminal while in that common directory
+To execute type "./a.out hotspots.csv". The program requires this one argument. If it isnt passed the program will alert the user and 
+terminate.
