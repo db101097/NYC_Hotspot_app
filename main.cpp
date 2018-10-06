@@ -19,7 +19,7 @@ findbyboro boro writefile
 
 int main (int argc , char * argv [])
 {
-	if(argc!=3)
+	if(argc!=2)
 	{
 		cout<<"Not enough arguments passed."<<endl;
 	}
@@ -110,7 +110,7 @@ int main (int argc , char * argv [])
 	}
 	else
 	{
-			cout<<"The file "<<argv[1]<<" does not exist"<<endl;
+			cout<<"The file "<<argv[1]<<" could not be opened"<<endl;
 	}
 
 

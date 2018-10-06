@@ -18,38 +18,49 @@ Hotspot (){};
 // Constructor that creates Hotspot object from a hotspot file text line
 Hotspot(const string dataline)
 {
-				vector<string> info;
+			vector<string> info;
 				istringstream s(dataline);
 				string parsed,i;
+				bool success=true;
 				while (getline(s,parsed,','))
 				{
-					if(parsed[0]==' ' || parsed[parsed.length()-1]==' ')
+					if(parsed.length()<1 || parsed[0]==' ' || parsed[parsed.length()-1]==' ' )
 					{
-							cout<<"INCORRECT FORMAT"<<endl;
+							success=false;
 					}
 
 					else if(parsed[0]=='"')
 					{
+
 						i+=parsed+',';
 						while(parsed[parsed.length()-1]!='"')
 						{
-								getline(s,parsed,',');
-								if(parsed[parsed.length()-1]=='"')
+								
+								if(!getline(s,parsed,','))
+								{
+									success=false;
+									break;
+								}
+								else if(parsed[parsed.length()-1]=='"')
+								{
 									i+=parsed;
+								}
 								else
-								i+=parsed+',';
+								{
+									i+=parsed+',';
+								}
 						}
 						info.push_back(i);
 						i="";
 					}
-
+				
 					else
 					{
 						info.push_back(parsed);
 					}		
 				}
 
-			if(info.size()==9)
+			if(info.size()==9 && success==true)
 		{
 			Objectid=atoi(info[0].c_str());
 			Borough=info[1];
@@ -169,7 +180,6 @@ float GetDistance(float lat2 , float lon2)
   lon2r = deg2rad(lon2);
   u = sin((lat2r - lat1r)/2);
   v = sin((lon2r - lon1r)/2);
-cout<<2.0 * earthRadiusMi * asin(sqrt(u * u + cos(Latitude) * cos(lat2) * v * v))<<endl;
   return 2.0 * earthRadiusMi * asin(sqrt(u * u + cos(Latitude) * cos(lat2) * v * v));
 };
   
