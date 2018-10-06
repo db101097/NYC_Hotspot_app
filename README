@@ -17,5 +17,5 @@ everything else was done by myself.
 
 To run:
 To run the program simply move all the files to a common directory and then type "g++ main.cpp" in terminal while in that common directory
-To execute type "./a.out hotspots.csv". The program requires this one argument. If it isnt passed the program will alert the user and 
+To execute type "./a.out nyc_hotspots.csv". The program requires this one argument. If it isnt passed the program will alert the user and 
 terminate.
